@@ -54,72 +54,69 @@
     <!-- Create Form Modal-->
     <div class="modal fade" id="CreateFormModal" tabindex="-1" role="dialog" aria-labelledby="CreateFormModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-xl" role="document">
             <form class="user" id="createForm">
             @csrf
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="CreateFormModalLabel">Create New Agent</h5>
+                    <h5 class="modal-title" id="CreateFormModalLabel">Create New Hotel</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-12 mb-3">
-                            <label for="name">Full name:</label>
-                            <input type="text" name="name" value="{{ old('name') }}" class="form-control form-control @error('name') is-invalid @enderror"
-                                id="name" aria-describedby="name"
-                                placeholder="Enter full name">
-                            @error('name')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                        <div class="col-2">
+                            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a style="font-size: 11px;" class="nav-link active" id="tab1-tab" data-toggle="pill" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">{{ ucwords(strtolower('USER SIGN-UP')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab2-tab" data-toggle="pill" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">{{ ucwords(strtolower('EMERGENCY CONTACT  DETAILS')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab3-tab" data-toggle="pill" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">{{ ucwords(strtolower('OTHER DETAILS')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab4-tab" data-toggle="pill" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">{{ ucwords(strtolower('HOTELS ONBOARDING')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab5-tab" data-toggle="pill" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">{{ ucwords(strtolower('HOTELS CONTACT DETAILS')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab6-tab" data-toggle="pill" href="#tab6" role="tab" aria-controls="tab6" aria-selected="false">{{ ucwords(strtolower('PARENT COMPANY')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab7-tab" data-toggle="pill" href="#tab7" role="tab" aria-controls="tab7" aria-selected="false">{{ ucwords(strtolower('HOTEL CATEGORIZATION')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab8-tab" data-toggle="pill" href="#tab8" role="tab" aria-controls="tab8" aria-selected="false">{{ ucwords(strtolower('HOTEL AMENITIES')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab9-tab" data-toggle="pill" href="#tab9" role="tab" aria-controls="tab9" aria-selected="false">{{ ucwords(strtolower('ROOM TYPE PICTURES')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab10-tab" data-toggle="pill" href="#tab10" role="tab" aria-controls="tab10" aria-selected="false">{{ ucwords(strtolower('HOTEL PRICE PER ROOM TYPE')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab11-tab" data-toggle="pill" href="#tab11" role="tab" aria-controls="tab11" aria-selected="false">{{ ucwords(strtolower('BOOKING DAYS')) }}</a>
+                            </div>
                         </div>
-                        <div class="col-12 mb-3">
-                            <label for="email">Email:</label>
-                            <input type="email" name="email" value="{{ old('email') }}" class="form-control form-control @error('email') is-invalid @enderror"
-                                id="email" aria-describedby="email"
-                                placeholder="Enter email">
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="col-12 mb-3">
-                            <label for="phone_number">Phone Number:</label>
-                            <input type="text" name="phone_number" value="{{ old('phone_number') }}" class="form-control form-control @error('phone_number') is-invalid @enderror"
-                                id="phone_number" aria-describedby="phone_number"
-                                placeholder="Enter phone number">
-                            @error('phone_number')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="col-12 mb-3">
-                            <label for="password">Password:</label>
-                            <input type="text" name="password" value="{{ old('password') }}" class="form-control form-control @error('password') is-invalid @enderror"
-                                id="password" aria-describedby="password"
-                                placeholder="Enter password">
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                        <div class="col-12">
-                            <label for="referral_code">Referral Code:</label>
-                            <input type="text" name="referral_code" value="{{ old('referral_code') }}" class="form-control form-control @error('referral_code') is-invalid @enderror"
-                                id="referral_code" aria-describedby="referral_code"
-                                placeholder="Enter referral code" />
-                            @error('referral_code')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                        <div class="col-10">
+                            <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+                                @include('hotels.form1')
+                            </div>
+                            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                                @include('hotels.form1')
+                            </div>
+                            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+                                @include('hotels.form1')
+                            </div>
+                            <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+                                @include('hotels.form1')
+                            </div>
+                            <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
+                                @include('hotels.form1')
+                            </div>
+                            <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="tab6-tab">
+                                @include('hotels.form1')
+                            </div>
+                            <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="tab7-tab">
+                                @include('hotels.form1')
+                            </div>
+                            <div class="tab-pane fade" id="tab8" role="tabpanel" aria-labelledby="tab8-tab">
+                                @include('hotels.form1')
+                            </div>
+                            <div class="tab-pane fade" id="tab9" role="tabpanel" aria-labelledby="tab9-tab">
+                                @include('hotels.form1')
+                            </div>
+                            <div class="tab-pane fade" id="tab10" role="tabpanel" aria-labelledby="tab10-tab">
+                                @include('hotels.form1')
+                            </div>
+                            <div class="tab-pane fade" id="tab11" role="tabpanel" aria-labelledby="tab411tab">
+                                @include('hotels.form1')
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
