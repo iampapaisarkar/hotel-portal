@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12 col-md-6">
-         <label for="ha_amenities">ha_:</label>
+         <label for="ha_amenities">Amenities:</label>
          <select name="ha_amenities" id="inputState" class="form-control  @error('ha_amenities') is-invalid @enderror">
             <option selected value="">Select Amenities</option>
             <option>Parking</option>

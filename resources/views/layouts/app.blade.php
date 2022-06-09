@@ -27,6 +27,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('libs/app-assets/vendors/css/extensions/toastr.min.css')}}">
 
     <script src="{{ asset('libs/vendor/jquery/jquery.min.js') }}"></script>
+
     <style>
         .error {
             color: #5a5c69!important;
