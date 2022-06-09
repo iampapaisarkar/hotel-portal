@@ -14,7 +14,7 @@
          <label for="first_name">First name:</label>
          <input type="text" name="first_name" value="{{ old('first_name') }}"
              class="form-control form-control @error('first_name') is-invalid @enderror" id="first_name"
-             aria-describedby="first_name" placeholder="Enter full first_name">
+             aria-describedby="first_name" placeholder="Enter full first name">
          @error('first_name')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
@@ -25,7 +25,7 @@
          <label for="last_name">Last name:</label>
          <input type="text" name="last_name" value="{{ old('last_name') }}"
              class="form-control form-control @error('last_name') is-invalid @enderror" id="last_name"
-             aria-describedby="last_name" placeholder="Enter full last_name">
+             aria-describedby="last_name" placeholder="Enter full last name">
          @error('last_name')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>

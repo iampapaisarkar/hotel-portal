@@ -87,34 +87,34 @@
                                 @include('hotels.form1')
                             </div>
                             <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-                                @include('hotels.form1')
+                                @include('hotels.form2')
                             </div>
                             <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-                                @include('hotels.form1')
+                                @include('hotels.form3')
                             </div>
                             <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
-                                @include('hotels.form1')
+                                @include('hotels.form4')
                             </div>
                             <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
-                                @include('hotels.form1')
+                                @include('hotels.form5')
                             </div>
                             <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="tab6-tab">
-                                @include('hotels.form1')
+                                @include('hotels.form6')
                             </div>
                             <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="tab7-tab">
-                                @include('hotels.form1')
+                                @include('hotels.form7')
                             </div>
                             <div class="tab-pane fade" id="tab8" role="tabpanel" aria-labelledby="tab8-tab">
-                                @include('hotels.form1')
+                                @include('hotels.form8')
                             </div>
                             <div class="tab-pane fade" id="tab9" role="tabpanel" aria-labelledby="tab9-tab">
-                                @include('hotels.form1')
+                                @include('hotels.form9')
                             </div>
                             <div class="tab-pane fade" id="tab10" role="tabpanel" aria-labelledby="tab10-tab">
-                                @include('hotels.form1')
+                                @include('hotels.form10')
                             </div>
                             <div class="tab-pane fade" id="tab11" role="tabpanel" aria-labelledby="tab411tab">
-                                @include('hotels.form1')
+                                @include('hotels.form11')
                             </div>
                             </div>
                         </div>
