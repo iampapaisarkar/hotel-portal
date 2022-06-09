@@ -16,11 +16,11 @@ class CreateOtherDetailsTable extends Migration
         Schema::create('other_details', function (Blueprint $table) {
             $table->id();
             $table->integer('record_id');
-            $table->string('ac_number');
-            $table->string('name_of_bank');
-            $table->string('id_type');
-            $table->string('id_document');
-            $table->integer('id_number');
+            $table->string('od_ac_number');
+            $table->string('od_name_of_bank');
+            $table->string('od_id_type');
+            $table->string('od_id_document');
+            $table->integer('od_id_number');
             $table->timestamps();
         });
     }

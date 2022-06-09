@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12 col-md-6">
          <label for="room_type">Room Type:</label>
-         <select name="room_type" id="inputState" class="form-control  @error('room_type') is-invalid @enderror">
+         <select name="hp_room_type" id="inputState" class="form-control  @error('hp_room_type') is-invalid @enderror">
             <option selected value="">Select Room Type</option>
             <option>Standard Single</option>
             <option>Standard Double</option>
@@ -13,7 +13,7 @@
             <option>Presidential Suite</option>
             <option>Twin-Room</option>
         </select>
-        @error('room_type')
+        @error('hp_room_type')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
          </span>
@@ -21,10 +21,10 @@
      </div>
     <div class="col-12 col-md-6 mb-3">
          <label for="corporate_price">Corporate Price:</label>
-         <input type="number" name="corporate_price" value="{{ old('corporate_price') }}"
-             class="form-control form-control @error('corporate_price') is-invalid @enderror" id="corporate_price"
-             aria-describedby="corporate_price" placeholder="Enter corporate price">
-         @error('corporate_price')
+         <input type="number" name="hp_corporate_price" value="{{ old('hp_corporate_price') }}"
+             class="form-control form-control @error('hp_corporate_price') is-invalid @enderror" id="hp_corporate_price"
+             aria-describedby="hp_corporate_price" placeholder="Enter corporate price">
+         @error('hp_corporate_price')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
          </span>
@@ -32,10 +32,10 @@
      </div>
      <div class="col-12 col-md-6 mb-3">
          <label for="discount_rate">Discount Rate (%):</label>
-         <input type="number" name="discount_rate" value="{{ old('discount_rate') }}"
-             class="form-control form-control @error('discount_rate') is-invalid @enderror" id="discount_rate"
-             aria-describedby="discount_rate" placeholder="Enter discount rate">
-         @error('discount_rate')
+         <input type="number" name="hp_discount_rate" value="{{ old('hp_discount_rate') }}"
+             class="form-control form-control @error('hp_discount_rate') is-invalid @enderror" id="hp_discount_rate"
+             aria-describedby="hp_discount_rate" placeholder="Enter discount rate">
+         @error('hp_discount_rate')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
          </span>

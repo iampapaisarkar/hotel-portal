@@ -16,8 +16,8 @@ class CreateParentCompaniesTable extends Migration
         Schema::create('parent_companies', function (Blueprint $table) {
             $table->id();
             $table->integer('record_id');
-            $table->string('name');
-            $table->integer('rc_number');
+            $table->string('pc_name');
+            $table->integer('pc_rc_number');
             $table->timestamps();
         });
     }

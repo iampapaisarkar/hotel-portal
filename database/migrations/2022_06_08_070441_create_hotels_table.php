@@ -16,15 +16,15 @@ class CreateHotelsTable extends Migration
         Schema::create('hotels', function (Blueprint $table) {
             $table->id();
             $table->integer('record_id');
-            $table->string('name');
-            $table->string('description');
-            $table->string('country');
-            $table->string('state');
-            $table->string('city');
-            $table->string('street_name');
-            $table->integer('street_number');
-            $table->string('lga');
-            $table->integer('zip_code');
+            $table->string('h_name');
+            $table->string('h_description');
+            $table->string('h_country');
+            $table->string('h_state');
+            $table->string('h_city');
+            $table->string('h_street_name');
+            $table->integer('h_street_number');
+            $table->string('h_lga');
+            $table->integer('h_zip_code');
             $table->timestamps();
         });
     }

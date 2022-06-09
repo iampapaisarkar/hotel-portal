@@ -16,10 +16,10 @@ class CreateContactDetailsTable extends Migration
         Schema::create('contact_details', function (Blueprint $table) {
             $table->id();
             $table->integer('record_id');
-            $table->string('name');
-            $table->string('address');
-            $table->string('phone_number');
-            $table->string('email');
+            $table->string('cd_name');
+            $table->string('cd_address');
+            $table->string('cd_phone_number');
+            $table->string('cd_email');
             $table->timestamps();
         });
     }

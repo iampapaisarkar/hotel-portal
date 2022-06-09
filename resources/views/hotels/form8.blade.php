@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-12 col-md-6">
-         <label for="amenities">Amenities:</label>
-         <select name="amenities" id="inputState" class="form-control  @error('amenities') is-invalid @enderror">
+         <label for="ha_amenities">ha_:</label>
+         <select name="ha_amenities" id="inputState" class="form-control  @error('ha_amenities') is-invalid @enderror">
             <option selected value="">Select Amenities</option>
             <option>Parking</option>
             <option>Free Wi-Fi</option>
@@ -39,15 +39,15 @@
             <option>Partying</option>
             <option>No Partying</option>
         </select>
-        @error('amenities')
+        @error('ha_amenities')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
          </span>
          @enderror
      </div>
      <div class="col-12 col-md-6">
-         <label for="room_type">Room Type:</label>
-         <select name="room_type" id="inputState" class="form-control  @error('room_type') is-invalid @enderror">
+         <label for="ha_room_type">Room Type:</label>
+         <select name="ha_room_type" id="inputState" class="form-control  @error('ha_room_type') is-invalid @enderror">
             <option selected value="">Select Room Type</option>
             <option>Standard Single</option>
             <option>Standard Double</option>
@@ -59,15 +59,15 @@
             <option>Presidential Suite</option>
             <option>Twin-Room</option>
         </select>
-        @error('room_type')
+        @error('ha_room_type')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
          </span>
          @enderror
      </div>
      <div class="col-12 col-md-6">
-         <label for="room_type_amenities">Room Type Amenities:</label>
-         <select name="room_type_amenities" id="inputState" class="form-control  @error('room_type_amenities') is-invalid @enderror">
+         <label for="ha_room_type_amenities">Room Type Amenities:</label>
+         <select name="ha_room_type_amenities" id="inputState" class="form-control  @error('ha_room_type_amenities') is-invalid @enderror">
             <option selected value="">Select Room Type Amenities</option>
             <option>Free Wi-Fi</option>
             <option>Room Service</option>
@@ -97,7 +97,7 @@
             <option>Standard</option>
             <option>Standard</option>
         </select>
-        @error('room_type_amenities')
+        @error('ha_room_type_amenities')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
          </span>

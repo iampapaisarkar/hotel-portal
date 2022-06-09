@@ -16,13 +16,13 @@ class CreateHotelCategoriesTable extends Migration
         Schema::create('hotel_categories', function (Blueprint $table) {
             $table->id();
             $table->integer('record_id');
-            $table->string('type_of_hotel');
-            $table->string('days_of_notice');
-            $table->string('room_type');
-            $table->integer('bed_no');
-            $table->integer('guest_no');
-            $table->integer('bathroom_no');
-            $table->integer('room_no');
+            $table->string('hcat_type_of_hotel');
+            $table->string('hcat_days_of_notice');
+            $table->string('hcat_room_type');
+            $table->integer('hcat_bed_no');
+            $table->integer('hcat_guest_no');
+            $table->integer('hcat_bathroom_no');
+            $table->integer('hcat_room_no');
             $table->timestamps();
         });
     }

@@ -16,9 +16,9 @@ class CreateHotelAmenitiesTable extends Migration
         Schema::create('hotel_amenities', function (Blueprint $table) {
             $table->id();
             $table->integer('record_id');
-            $table->string('amenities');
-            $table->string('room_type');
-            $table->string('room_type_amenities');
+            $table->string('ha_amenities');
+            $table->string('ha_room_type');
+            $table->string('ha_room_type_amenities');
             $table->timestamps();
         });
     }

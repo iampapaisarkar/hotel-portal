@@ -16,17 +16,17 @@ class CreateUserDetailsTable extends Migration
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
             $table->integer('record_id');
-            $table->string('user_name');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('phone_number');
-            $table->string('email');
-            $table->date('dob');
-            $table->string('gender');
-            $table->string('country');
-            $table->string('state');
-            $table->string('city');
-            $table->string('lga');
+            $table->string('ud_user_name');
+            $table->string('ud_first_name');
+            $table->string('ud_last_name');
+            $table->string('ud_phone_number');
+            $table->string('ud_email');
+            $table->date('ud_dob');
+            $table->string('ud_gender');
+            $table->string('ud_country');
+            $table->string('ud_state');
+            $table->string('ud_city');
+            $table->string('ud_lga');
             $table->timestamps();
         });
     }

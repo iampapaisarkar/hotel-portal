@@ -16,9 +16,9 @@ class CreateHotelPricesTable extends Migration
         Schema::create('hotel_prices', function (Blueprint $table) {
             $table->id();
             $table->integer('record_id');
-            $table->string('room_type');
-            $table->float('corporate_price');
-            $table->integer('discount_rate');
+            $table->string('hp_room_type');
+            $table->float('hp_corporate_price');
+            $table->integer('hp_discount_rate');
             $table->timestamps();
         });
     }
