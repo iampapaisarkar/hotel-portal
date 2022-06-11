@@ -1,6 +1,11 @@
 @extends('layouts.guest')
 
 @section('content')
+<style>
+    .bg-login-image{
+        background: #ef7c1d!important;
+    }
+</style>
 <div class="container">
 
     <!-- Outer Row -->
@@ -12,7 +17,9 @@
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <div class="col-lg-6 d-none bg-login-image d-flex align-items-center">
+                            <img src="{{asset('images/logo.png')}}" class="w-100"/>
+                        </div>
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">

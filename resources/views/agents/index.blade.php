@@ -33,7 +33,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone Number</th>
-                            <th>Referral Code</th>
+                            <th>Agent Code</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -111,10 +111,10 @@
                             @enderror
                         </div>
                         <div class="col-12">
-                            <label for="referral_code">Referral Code:</label>
+                            <label for="referral_code">Agent Code:</label>
                             <input type="text" name="referral_code" value="{{ old('referral_code') }}" class="form-control form-control @error('referral_code') is-invalid @enderror"
                                 id="referral_code" aria-describedby="referral_code"
-                                placeholder="Enter referral code" />
+                                placeholder="Enter agent code" />
                             @error('referral_code')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

@@ -3,7 +3,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('dashboard')}}">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+            <img src="{{asset('images/logo.png')}}" class="w-100"/>
         </div>
         <div class="sidebar-brand-text mx-3">HOTELS <sup>Portal</sup></div>
     </a>
@@ -54,3 +54,11 @@
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
     </div>
 </ul>
+
+<style>
+    .bg-gradient-primary {
+        background-color: #ef7c1d;
+        background-image: linear-gradient(180deg,#ed7a1b 10%,#ec791c 100%);
+        background-size: cover;
+    }
+</style>
