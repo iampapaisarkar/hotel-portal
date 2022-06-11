@@ -16,7 +16,6 @@ class CreateUserDetailsTable extends Migration
         Schema::create('user_details', function (Blueprint $table) {
             $table->id();
             $table->integer('record_id');
-            $table->string('ud_user_name');
             $table->string('ud_first_name');
             $table->string('ud_last_name');
             $table->string('ud_phone_number');
