@@ -11,10 +11,10 @@ class BookingDay extends Model
 
     protected $fillable = [
         'record_id',
-        'min_booking_day',
-        'max_booking_day',
-        'checkin_time',
-        'checkout_time',
-        'cancellation_type'
+        'bday_min_booking_day',
+        'bday_max_booking_day',
+        'bday_checkin_time',
+        'bday_checkout_time',
+        'bday_cancellation_type'
     ];
 }

@@ -11,12 +11,12 @@ class HotelCategory extends Model
 
     protected $fillable = [
         'record_id',
-        'type_of_hotel',
-        'days_of_notice',
-        'room_type',
-        'bed_no',
-        'guest_no',
-        'bathroom_no',
-        'room_no',
+        'hcat_type_of_hotel',
+        'hcat_days_of_notice',
+        'hcat_room_type',
+        'hcat_bed_no',
+        'hcat_guest_no',
+        'hcat_bathroom_no',
+        'hcat_room_no',
     ];
 }

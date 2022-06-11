@@ -11,9 +11,9 @@ class ContactDetails extends Model
 
     protected $fillable = [
         'record_id',
-        'name',
-        'address',
-        'phone_number',
-        'email'
+        'cd_name',
+        'cd_address',
+        'cd_phone_number',
+        'cd_email'
     ];
 }

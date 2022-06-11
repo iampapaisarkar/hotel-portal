@@ -11,16 +11,16 @@ class UserDetails extends Model
 
     protected $fillable = [
         'record_id',
-        'username',
-        'first_name',
-        'last_name',
-        'phone_number',
-        'email',
-        'dob',
-        'gender',
-        'country',
-        'state',
-        'city',
-        'lga',
+        'ud_username',
+        'ud_first_name',
+        'ud_last_name',
+        'ud_phone_number',
+        'ud_email',
+        'ud_dob',
+        'ud_gender',
+        'ud_country',
+        'ud_state',
+        'ud_city',
+        'ud_lga',
     ];
 }

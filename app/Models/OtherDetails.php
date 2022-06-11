@@ -11,10 +11,10 @@ class OtherDetails extends Model
 
     protected $fillable = [
         'record_id',
-        'ac_number',
-        'name_of_bank',
-        'id_type',
-        'id_document',
-        'id_number',
+        'od_ac_number',
+        'od_name_of_bank',
+        'od_id_type',
+        'od_id_document',
+        'od_id_number',
     ];
 }

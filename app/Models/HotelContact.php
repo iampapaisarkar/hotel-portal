@@ -11,7 +11,7 @@ class HotelContact extends Model
 
     protected $fillable = [
         'record_id',
-        'email',
-        'phone_number',
+        'hc_email',
+        'hc_phone_number',
     ];
 }

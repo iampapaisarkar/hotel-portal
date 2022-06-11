@@ -11,8 +11,8 @@ class HotelAmenities extends Model
 
     protected $fillable = [
         'record_id',
-        'amenities',
-        'room_type',
-        'room_type_amenities',
+        'ha_amenities',
+        'ha_room_type',
+        'ha_room_type_amenities',
     ];
 }

@@ -3,9 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-use App\Models\UserRoles;
-use App\Models\Roles;
+use App\Models\Records;
+use App\Models\UserDetails;
+use App\Models\ContactDetails;
+use App\Models\OtherDetails;
+use App\Models\Hotel;
+use App\Models\HotelContact;
+use App\Models\ParentCompany;
+use App\Models\HotelCategory;
+use App\Models\HotelAmenities;
+use App\Models\RoomType;
+use App\Models\HotelPrice;
+use App\Models\BookingDay;
 use  App\Http\Requests\AgentRequest;
 use Illuminate\Support\Facades\Hash;
 use DB;
@@ -51,7 +60,30 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            DB::beginTransaction();
+
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'phone_number' => $request->phone_number,
+                'referral_code' => $request->referral_code,
+                'password' => Hash::make($request->password),
+            ]);
+
+            UserRoles::create([
+                'user_id' => $user->id,
+                'role_id' => 2
+            ]);
+
+            DB::commit();
+
+            return response()->json('Agent created successfully.', 200);
+
+        }catch(Exception $e) {
+            DB::rollback();
+            return response()->json('error','There something internal server errore');
+        }
     }
 
     /**

@@ -11,5 +11,6 @@ class Records extends Model
 
     protected $fillable = [
         'user_id',
+        'type'
     ];
 }

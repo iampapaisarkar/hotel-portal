@@ -11,8 +11,8 @@ class HotelPrice extends Model
 
     protected $fillable = [
         'record_id',
-        'room_type',
-        'corporate_price',
-        'discount_rate',
+        'hp_room_type',
+        'hp_corporate_price',
+        'hp_discount_rate',
     ];
 }

@@ -11,7 +11,7 @@ class ParentCompany extends Model
 
     protected $fillable = [
         'record_id',
-        'name',
-        'rc_number',
+        'pc_name',
+        'pc_rc_number',
     ];
 }

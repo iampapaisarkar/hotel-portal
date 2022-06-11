@@ -11,14 +11,14 @@ class Hotel extends Model
 
     protected $fillable = [
         'record_id',
-        'name',
-        'description',
-        'country',
-        'state',
-        'city',
-        'street_name',
-        'street_number',
-        'lga',
-        'zip_code',
+        'h_name',
+        'h_description',
+        'h_country',
+        'h_state',
+        'h_city',
+        'h_street_name',
+        'h_street_number',
+        'h_lga',
+        'h_zip_code',
     ];
 }
