@@ -206,53 +206,53 @@
 
                 $("#createFormLoader").removeClass('d-none');
                 $("#createSubmit").attr('disabled', true);
-                // $.ajax({
-                //     url: "<?php echo asset('') ?>"+"agents",
-                //     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                //     type: 'POST',
-                //     data: formData,
-                //     dataType: "json",
-                //     success: function(response) {
-                //         $("#createFormLoader").addClass('d-none');
-                //         $("#createSubmit").attr('disabled', false);
+                $.ajax({
+                    url: "<?php echo asset('') ?>"+"hotels",
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    type: 'POST',
+                    data: formData,
+                    dataType: "json",
+                    success: function(response) {
+                        $("#createFormLoader").addClass('d-none');
+                        $("#createSubmit").attr('disabled', false);
 
-                //         $('#CreateFormModal').modal('hide')
+                        $('#CreateFormModal').modal('hide')
 
-                //         setTimeout(function() {
-                //             toastr['success'](
-                //                 response, {
-                //                     closeButton: true,
-                //                     tapToDismiss: false
-                //                 }
-                //             );
-                //         }, 1000);
+                        setTimeout(function() {
+                            toastr['success'](
+                                response, {
+                                    closeButton: true,
+                                    tapToDismiss: false
+                                }
+                            );
+                        }, 1000);
 
-                //     },
-                //     error: function(errors){
+                    },
+                    error: function(errors){
 
-                //         if(errors.status == 422){
-                //             var errorMessages = errors.responseJSON.errors
-                //             var validator = $( "#createForm" ).validate();
-                //             validator.showErrors(errorMessages);
-                //         }
+                        if(errors.status == 422){
+                            var errorMessages = errors.responseJSON.errors
+                            var validator = $( "#createForm" ).validate();
+                            validator.showErrors(errorMessages);
+                        }
 
-                //         $("#createFormLoader").addClass('d-none');
-                //         $("#createSubmit").attr('disabled', false);
+                        $("#createFormLoader").addClass('d-none');
+                        $("#createSubmit").attr('disabled', false);
 
-                //         setTimeout(function() {
-                //             toastr['error'](
-                //                 errors.responseJSON.message, {
-                //                     closeButton: true,
-                //                     tapToDismiss: false
-                //                 }
-                //             );
-                //         }, 1000);
+                        setTimeout(function() {
+                            toastr['error'](
+                                errors.responseJSON.message, {
+                                    closeButton: true,
+                                    tapToDismiss: false
+                                }
+                            );
+                        }, 1000);
 
-                //     },
-                //     cache: false,
-                //     contentType: false,
-                //     processData: false
-                // });
+                    },
+                    cache: false,
+                    contentType: false,
+                    processData: false
+                });
                 return false;
             }
         });
