@@ -1,8 +1,7 @@
 <div class="row">
     <div class="col-12 col-md-6">
          <label for="room_type">Room Type:</label>
-         <select name="hp_room_type" id="inputState" class="form-control  @error('hp_room_type') is-invalid @enderror">
-            <option selected value="">Select Room Type</option>
+         <select name="hp_room_type" id="hp_room_type" class="form-control  @error('hp_room_type') is-invalid @enderror">
             <option>Standard Single</option>
             <option>Standard Double</option>
             <option>Hotel-Apartments</option>
@@ -42,3 +41,15 @@
          @enderror
      </div>
  </div>
+
+
+ <script>
+        $(document).ready(function() {
+            var $disabledResults = $("#hp_room_type");
+            $disabledResults.select2({
+                multiple: true,
+                selectOnClose: false,
+                placeholder: "Select Room Type",
+            });
+        });
+ </script>

@@ -1,8 +1,7 @@
 <div class="row">
     <div class="col-12 col-md-6">
          <label for="ha_amenities">Amenities:</label>
-         <select name="ha_amenities" id="inputState" class="form-control  @error('ha_amenities') is-invalid @enderror">
-            <option selected value="">Select Amenities</option>
+         <select id="ha_amenities" name="ha_amenities" class="form-control w-100  @error('ha_amenities') is-invalid @enderror">
             <option>Parking</option>
             <option>Free Wi-Fi</option>
             <option>Room Service</option>
@@ -47,8 +46,7 @@
      </div>
      <div class="col-12 col-md-6">
          <label for="ha_room_type">Room Type:</label>
-         <select name="ha_room_type" id="inputState" class="form-control  @error('ha_room_type') is-invalid @enderror">
-            <option selected value="">Select Room Type</option>
+         <select name="ha_room_type" id="ha_room_type" class="form-control  @error('ha_room_type') is-invalid @enderror">
             <option>Standard Single</option>
             <option>Standard Double</option>
             <option>Hotel-Apartments</option>
@@ -67,8 +65,7 @@
      </div>
      <div class="col-12 col-md-6">
          <label for="ha_room_type_amenities">Room Type Amenities:</label>
-         <select name="ha_room_type_amenities" id="inputState" class="form-control  @error('ha_room_type_amenities') is-invalid @enderror">
-            <option selected value="">Select Room Type Amenities</option>
+         <select name="ha_room_type_amenities" id="ha_room_type_amenities" class="form-control  @error('ha_room_type_amenities') is-invalid @enderror">
             <option>Free Wi-Fi</option>
             <option>Room Service</option>
             <option>24-Hour Guest Reception</option>
@@ -104,3 +101,32 @@
          @enderror
      </div>
  </div>
+
+ <script>
+    $(document).ready(function() {
+        var $disabledResults = $("#ha_amenities");
+        $disabledResults.select2({
+            multiple: true,
+            selectOnClose: false,
+            placeholder: "Select Amenities",
+        });
+        var $disabledResults = $("#ha_room_type");
+        $disabledResults.select2({
+            multiple: true,
+            selectOnClose: false,
+            placeholder: "Select Room Type",
+        });
+        var $disabledResults = $("#ha_room_type_amenities");
+        $disabledResults.select2({
+            multiple: true,
+            selectOnClose: false,
+            placeholder: "Select Room Type Amenities",
+        });
+    });
+ </script>
+
+ <style>
+    .select2{
+        width: 100%!important;
+    }
+ </style>
