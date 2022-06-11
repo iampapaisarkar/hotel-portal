@@ -11,7 +11,6 @@ class UserDetails extends Model
 
     protected $fillable = [
         'record_id',
-        'ud_username',
         'ud_first_name',
         'ud_last_name',
         'ud_phone_number',

@@ -22,27 +22,18 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone Number</th>
-                            <th>Referral Code</th>
+                            <th>Id</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone Number</th>
-                            <th>Referral Code</th>
+                            <th>Id</th>
                         </tr>
                     </tfoot>
                     <tbody>
-                        @foreach($users as $user)
+                        @foreach($hotels as $hotel)
                         <tr>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>{{$user->phone_number}}</td>
-                            <td>{{$user->referral_code ? $user->referral_code : '-'}}</td>
+                            <td>{{$hotel->id}}</td>
                         </tr>
                         @endforeach
                     </tbody>
