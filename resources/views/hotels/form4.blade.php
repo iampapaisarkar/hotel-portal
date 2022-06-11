@@ -33,10 +33,15 @@
          @enderror
      </div>
      <div class="col-12 col-md-6">
+        @php
+        $states = app('App\Http\Service\Info')->states();
+        @endphp
          <label for="state">State:</label>
          <select name="h_state" id="inputh_State" class="form-control  @error('h_state') is-invalid @enderror">
-            <option selected>Select State</option>
-            <option>...</option>
+            <option selected value="" hidden>Select State</option>
+            @foreach($states as $state)
+            <option>{{$state->name}}</option>
+            @endforeach
         </select>
         @error('h_state')
          <span class="invalid-feedback" role="alert">
@@ -78,10 +83,15 @@
          @enderror
      </div>
      <div class="col-12 col-md-6">
+        @php
+        $lgas = app('App\Http\Service\Info')->lgas();
+        @endphp
          <label for="lga">L.G.A:</label>
          <select name="h_lga" id="inputState" class="form-control  @error('h_lga') is-invalid @enderror">
-            <option selected>Select LGA</option>
-            <option>...</option>
+            <option selected value="" hidden>Select LGA</option>
+            @foreach($lgas as $lga)
+            <option>{{$lga->name}}</option>
+            @endforeach
         </select>
         @error('h_lga')
          <span class="invalid-feedback" role="alert">
