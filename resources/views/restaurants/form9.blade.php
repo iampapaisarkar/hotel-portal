@@ -1,66 +1,62 @@
 <div class="row">
     <div class="col-12 col-md-6">
-         <label for="room_type">Room Type:</label>
-         <select name="rt_room_type" id="rt_room_type" class="form-control  @error('rt_room_type') is-invalid @enderror">
-            <option>Standard Single</option>
-            <option>Standard Double</option>
-            <option>Hotel-Apartments</option>
-            <option>King or Queen Room</option>
-            <option>Executive Suite</option>
-            <option>Family Suite</option>
-            <option>Penthouse</option>
-            <option>Presidential Suite</option>
-            <option>Twin-Room</option>
+         <label for="rm_restaurant_type">Type of Restaurant:</label>
+         <select name="rm_restaurant_type" id="rm_restaurant_type" class="form-control  @error('rm_restaurant_type') is-invalid @enderror">
+            <option selected value="">Select Type</option>
+            <option>Fine Dining</option>
+            <option>Casual Dinner</option>
+            <option>Lounges</option>
+            <option>Café</option>
+            <option>Eatery</option>
+            <option>Takeout</option>
+            <option>Buffet</option>
         </select>
-        @error('rt_room_type')
+        @error('rm_restaurant_type')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
          </span>
          @enderror
-     </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+         <label for="rm_meals">Meals:</label>
+         <select name="rm_meals" id="rm_meals" class="form-control  @error('rm_meals') is-invalid @enderror">
+            <option selected value="">Select Melas</option>
+            <option>African</option>
+            <option>Spanish</option>
+            <option>Intercontinental</option>
+            <option>Italian</option>
+            <option>Mexican</option>
+            <option>Lebanese</option>
+            <option>Others</option>
+        </select>
+        @error('rm_meals')
+         <span class="invalid-feedback" role="alert">
+             <strong>{{ $message }}</strong>
+         </span>
+         @enderror
+    </div>
+
     <div class="col-12 col-md-6 mb-3">
-         <label for="front_view">Front View of Hotel:</label>
-         <input type="file" name="rt_front_view" value="{{ old('rt_front_view') }}"
-             class="form-control form-control @error('rt_front_view') is-invalid @enderror" id="rt_front_view"
-             aria-describedby="rt_front_view" placeholder="Enter phone number">
-         @error('rt_front_view')
+         <label for="rm_price">Prices:</label>
+         <input type="number" name="rm_price" value="{{ old('rm_price') }}"
+             class="form-control form-control @error('rm_price') is-invalid @enderror" id="rm_price"
+             aria-describedby="rm_price" placeholder="Enter price">
+         @error('rm_price')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
          </span>
          @enderror
      </div>
      <div class="col-12 col-md-6 mb-3">
-         <label for="bathroom_view">Bathroom Pictures:</label>
-         <input type="file" name="rt_bathroom_view" value="{{ old('rt_bathroom_view') }}"
-             class="form-control form-control @error('rt_bathroom_view') is-invalid @enderror" id="rt_bathroom_view"
-             aria-describedby="rt_bathroom_view" placeholder="Enter phone number">
-         @error('rt_bathroom_view')
-         <span class="invalid-feedback" role="alert">
-             <strong>{{ $message }}</strong>
-         </span>
-         @enderror
-     </div>
-     <div class="col-12 col-md-6 mb-3">
-         <label for="room_picture">Room pictures:</label>
-         <input type="file" name="rt_room_picture" value="{{ old('rt_room_picture') }}"
-             class="form-control form-control @error('rt_room_picture') is-invalid @enderror" id="rt_room_picture"
-             aria-describedby="rt_room_picture" placeholder="Enter phone number">
-         @error('rt_room_picture')
+         <label for="rm_images">Images:</label>
+         <input type="file" name="rm_images" value="{{ old('rm_images') }}"
+             class="form-control form-control @error('rm_images') is-invalid @enderror" id="rm_images"
+             aria-describedby="rm_images" >
+         @error('rm_images')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
          </span>
          @enderror
      </div>
  </div>
-
-
- <script>
-        $(document).ready(function() {
-            var $disabledResults = $("#rt_room_type");
-            $disabledResults.select2({
-                multiple: true,
-                selectOnClose: false,
-                placeholder: "Select Room Type",
-            });
-        });
- </script>

@@ -19,7 +19,7 @@
         {{env('APP_NAME')}}
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="hotelsTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="restaurantsTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -55,50 +55,46 @@
                             <a style="font-size: 11px;" class="nav-link active" id="tab1-tab" data-toggle="pill" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">{{ ucwords(strtolower('USER SIGN-UP')) }}</a>
                             <a style="font-size: 11px;" class="nav-link" id="tab2-tab" data-toggle="pill" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">{{ ucwords(strtolower('EMERGENCY CONTACT  DETAILS')) }}</a>
                             <a style="font-size: 11px;" class="nav-link" id="tab3-tab" data-toggle="pill" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">{{ ucwords(strtolower('OTHER DETAILS')) }}</a>
-                            <a style="font-size: 11px;" class="nav-link" id="tab4-tab" data-toggle="pill" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">{{ ucwords(strtolower('HOTELS ONBOARDING')) }}</a>
-                            <a style="font-size: 11px;" class="nav-link" id="tab5-tab" data-toggle="pill" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">{{ ucwords(strtolower('HOTELS CONTACT DETAILS')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab4-tab" data-toggle="pill" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">{{ ucwords(strtolower('RESTAURANTS ONBOARDING')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab5-tab" data-toggle="pill" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">{{ ucwords(strtolower('RESTAURANTS CONTACT DETAILS')) }}</a>
                             <a style="font-size: 11px;" class="nav-link" id="tab6-tab" data-toggle="pill" href="#tab6" role="tab" aria-controls="tab6" aria-selected="false">{{ ucwords(strtolower('PARENT COMPANY')) }}</a>
-                            <a style="font-size: 11px;" class="nav-link" id="tab7-tab" data-toggle="pill" href="#tab7" role="tab" aria-controls="tab7" aria-selected="false">{{ ucwords(strtolower('HOTEL CATEGORIZATION')) }}</a>
-                            <a style="font-size: 11px;" class="nav-link" id="tab8-tab" data-toggle="pill" href="#tab8" role="tab" aria-controls="tab8" aria-selected="false">{{ ucwords(strtolower('HOTEL AMENITIES')) }}</a>
-                            <a style="font-size: 11px;" class="nav-link" id="tab9-tab" data-toggle="pill" href="#tab9" role="tab" aria-controls="tab9" aria-selected="false">{{ ucwords(strtolower('ROOM TYPE PICTURES')) }}</a>
-                            <a style="font-size: 11px;" class="nav-link" id="tab10-tab" data-toggle="pill" href="#tab10" role="tab" aria-controls="tab10" aria-selected="false">{{ ucwords(strtolower('HOTEL PRICE PER ROOM TYPE')) }}</a>
-                            <a style="font-size: 11px;" class="nav-link" id="tab11-tab" data-toggle="pill" href="#tab11" role="tab" aria-controls="tab11" aria-selected="false">{{ ucwords(strtolower('BOOKING DAYS')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab7-tab" data-toggle="pill" href="#tab7" role="tab" aria-controls="tab7" aria-selected="false">{{ ucwords(strtolower('RESTAURANT CATEGORIZATION')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab8-tab" data-toggle="pill" href="#tab8" role="tab" aria-controls="tab8" aria-selected="false">{{ ucwords(strtolower('RESTAURANT AMENITIES')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab9-tab" data-toggle="pill" href="#tab9" role="tab" aria-controls="tab9" aria-selected="false">{{ ucwords(strtolower('RESTAURANT MEALS')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab10-tab" data-toggle="pill" href="#tab10" role="tab" aria-controls="tab10" aria-selected="false">{{ ucwords(strtolower('CANCELLATION DETAILS')) }}</a>
                             </div>
                         </div>
                         <div class="col-10">
                             <div class="tab-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-                                    @include('hotels.form1')
+                                    @include('restaurants.form1')
                                 </div>
                                 <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-                                    @include('hotels.form2')
+                                    @include('restaurants.form2')
                                 </div>
                                 <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-                                    @include('hotels.form3')
+                                    @include('restaurants.form3')
                                 </div>
                                 <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
-                                    @include('hotels.form4')
+                                    @include('restaurants.form4')
                                 </div>
                                 <div class="tab-pane fade" id="tab5" role="tabpanel" aria-labelledby="tab5-tab">
-                                    @include('hotels.form5')
+                                    @include('restaurants.form5')
                                 </div>
                                 <div class="tab-pane fade" id="tab6" role="tabpanel" aria-labelledby="tab6-tab">
-                                    @include('hotels.form6')
+                                    @include('restaurants.form6')
                                 </div>
                                 <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="tab7-tab">
-                                    @include('hotels.form7')
+                                    @include('restaurants.form7')
                                 </div>
                                 <div class="tab-pane fade" id="tab8" role="tabpanel" aria-labelledby="tab8-tab">
-                                    @include('hotels.form8')
+                                    @include('restaurants.form8')
                                 </div>
                                 <div class="tab-pane fade" id="tab9" role="tabpanel" aria-labelledby="tab9-tab">
-                                    @include('hotels.form9')
+                                    @include('restaurants.form9')
                                 </div>
                                 <div class="tab-pane fade" id="tab10" role="tabpanel" aria-labelledby="tab10-tab">
-                                    @include('hotels.form10')
-                                </div>
-                                <div class="tab-pane fade" id="tab11" role="tabpanel" aria-labelledby="tab411tab">
-                                    @include('hotels.form11')
+                                    @include('restaurants.form10')
                                 </div>
                             </div>
                         </div>
@@ -121,13 +117,13 @@
 
         function fetchTableData(){
             $.ajax({
-                url: "<?php echo asset('') ?>"+"hotels?json=1",
+                url: "<?php echo asset('') ?>"+"restaurants?json=1",
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                 type: 'GET',
                 dataType: "json",
                 success: function(response) {
                     
-                    $('#hotelsTable').DataTable({
+                    $('#restaurantsTable').DataTable({
                         data: response,
                         columns: [
                             { 'data': 'id' },
@@ -226,7 +222,7 @@
                 $("#createFormLoader").removeClass('d-none');
                 $("#createSubmit").attr('disabled', true);
                 $.ajax({
-                    url: "<?php echo asset('') ?>"+"hotels",
+                    url: "<?php echo asset('') ?>"+"restaurants",
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
                     type: 'POST',
                     data: formData,
@@ -237,7 +233,7 @@
 
                         $('#CreateFormModal').modal('hide')
 
-                        $('#hotelsTable').DataTable().destroy();
+                        $('#restaurantsTable').DataTable().destroy();
                         fetchTableData();
 
                         setTimeout(function() {
