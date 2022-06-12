@@ -17,7 +17,8 @@ class CreateHotelAmenitiesTable extends Migration
             $table->id();
             $table->integer('record_id');
             $table->string('ha_amenities');
-            $table->string('ha_type');
+            $table->string('ha_room_type');
+            $table->string('ha_room_type_amenities');
             $table->timestamps();
         });
     }
