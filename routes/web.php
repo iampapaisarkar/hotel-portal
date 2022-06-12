@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/', function () {return view('index');});
 
 if(Auth::check()){
-	Route::get('/', function () {return view('index');})->name('dashboard');
+    Route::get('/', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
 }else{
 	Route::get('/', function () { return view('auth.login'); });
 }
@@ -27,7 +27,7 @@ if(Auth::check()){
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', function () {return view('index');})->name('dashboard');
+    Route::get('/', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
     Route::resource('agents', 'App\Http\Controllers\AgentController');
     Route::resource('hotels', 'App\Http\Controllers\HotelController');
     Route::resource('restaurants', 'App\Http\Controllers\RestaurantController');
