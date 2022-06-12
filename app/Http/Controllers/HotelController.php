@@ -149,7 +149,7 @@ class HotelController extends Controller
             HotelAmenities::create([
                 "record_id" => $record->id,
                 "ha_amenities" => $request->ha_amenities,
-                "ha_room_type" => $request->ha_room_type,
+                "ha_type" => $request->ha_room_type,
                 "ha_room_type_amenities" => $request->ha_room_type_amenities,
             ]);
 
