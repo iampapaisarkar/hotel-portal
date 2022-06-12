@@ -32,6 +32,7 @@ class HotelController extends Controller
     public function index(Request $request)
     {
         $hotels = Records::select('records.*')
+        ->where('type', 'hotel')
         ->latest();
 
         if(Auth::user()->hasRole(['admin'])){

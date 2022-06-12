@@ -41,9 +41,14 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ route('hotels.index') }}">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Hotel & Restaurant</span></a>
+            <span>Hotels</span></a>
     </li>
 
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('restaurants.index') }}">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Restaurants</span></a>
+    </li>
     
 
     <!-- Divider -->

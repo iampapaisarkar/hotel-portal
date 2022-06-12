@@ -30,4 +30,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/', function () {return view('index');})->name('dashboard');
     Route::resource('agents', 'App\Http\Controllers\AgentController');
     Route::resource('hotels', 'App\Http\Controllers\HotelController');
+    Route::resource('restaurants', 'App\Http\Controllers\RestaurantController');
 });
