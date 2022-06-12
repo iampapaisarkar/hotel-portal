@@ -19,13 +19,13 @@
         {{env('APP_NAME')}}
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="agentsTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone Number</th>
-                            <th>Referral Code</th>
+                            <th>Agent Code</th>
                         </tr>
                     </thead>
                     <tfoot>
@@ -36,16 +36,6 @@
                             <th>Agent Code</th>
                         </tr>
                     </tfoot>
-                    <tbody>
-                        @foreach($users as $user)
-                        <tr>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>{{$user->phone_number}}</td>
-                            <td>{{$user->referral_code ? $user->referral_code : '-'}}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
                 </table>
             </div>
         </div>
@@ -135,6 +125,44 @@
 
 <script>
     $(document).ready(function() {
+
+        fetchTableData();
+
+        function fetchTableData(){
+            $.ajax({
+                url: "<?php echo asset('') ?>"+"agents?json=1",
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                type: 'GET',
+                dataType: "json",
+                success: function(response) {
+                    
+                    $('#agentsTable').DataTable({
+                        data: response,
+                        columns: [
+                            { 'data': 'name' },
+                            { 'data': 'email' },
+                            { 'data': 'phone_number' },
+                            { 'data': 'referral_code' }
+                        ]
+                    });
+                },
+                error: function(errors){
+                    setTimeout(function() {
+                        toastr['error'](
+                            errors.responseJSON.message, {
+                                closeButton: true,
+                                tapToDismiss: false
+                            }
+                        );
+                    }, 1000);
+
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+       }
+
         var $form = $("#createForm");
         $form.validate({
             rules: {
@@ -162,6 +190,9 @@
                         $("#createSubmit").attr('disabled', false);
 
                         $('#CreateFormModal').modal('hide')
+
+                        $('#agentsTable').DataTable().destroy();
+                        fetchTableData();
 
                         setTimeout(function() {
                             toastr['success'](
