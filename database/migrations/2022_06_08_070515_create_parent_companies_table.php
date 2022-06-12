@@ -17,7 +17,7 @@ class CreateParentCompaniesTable extends Migration
             $table->id();
             $table->integer('record_id');
             $table->string('pc_name');
-            $table->integer('pc_rc_number');
+            $table->string('pc_rc_number');
             $table->timestamps();
         });
     }

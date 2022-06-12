@@ -51,7 +51,7 @@
          <label for="od_id_number">Identification Number:</label>
          <input type="text" name="od_id_number" value="{{ old('od_id_number') }}"
              class="form-control form-control @error('od_id_number') is-invalid @enderror" id="od_id_number"
-             aria-describedby="od_id_number" placeholder="Enter name of bank">
+             aria-describedby="od_id_number" placeholder="Enter identification number">
          @error('od_id_number')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>

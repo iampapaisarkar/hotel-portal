@@ -12,7 +12,7 @@
      </div>
      <div class="col-12 col-md-6 mb-3">
          <label for="rc_number">RC Number:</label>
-         <input type="number" name="pc_rc_number" value="{{ old('pc_rc_number') }}"
+         <input type="text" name="pc_rc_number" value="{{ old('pc_rc_number') }}"
              class="form-control form-control @error('pc_rc_number') is-invalid @enderror" id="pc_rc_number" aria-describedby="pc_rc_number"
              placeholder="Enter rc number">
          @error('pc_rc_number')

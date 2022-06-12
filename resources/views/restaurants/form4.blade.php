@@ -1,9 +1,9 @@
 <div class="row">
      <div class="col-12 col-md-6 mb-3">
-         <label for="name">Name:</label>
+         <label for="name">Restaurant Name:</label>
          <input type="text" name="r_name" value="{{ old('r_name') }}"
              class="form-control form-control @error('r_name') is-invalid @enderror" id="r_name"
-             aria-describedby="r_name" placeholder="Enter full name">
+             aria-describedby="r_name" placeholder="Enter restaurant name">
          @error('r_name')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
@@ -11,10 +11,10 @@
          @enderror
      </div>
      <div class="col-12 col-md-6 mb-3">
-         <label for="description">Description:</label>
+         <label for="description">Restaurant Description:</label>
          <input type="text" name="r_description" value="{{ old('r_description') }}"
              class="form-control form-control @error('r_description') is-invalid @enderror" id="r_description"
-             aria-describedby="r_description" placeholder="Enter full description">
+             aria-describedby="r_description" placeholder="Enter restaurant description">
          @error('r_description')
          <span class="invalid-feedback" role="alert">
              <strong>{{ $message }}</strong>
