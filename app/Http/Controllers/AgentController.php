@@ -32,14 +32,6 @@ class AgentController extends Controller
         $users = $users->get();
 
         if($request->json == '1'){
-
-            // $data = [
-            //     "draw" => 1,
-            //     "recordsTotal" => 57,
-            //     "recordsFiltered" => 57,
-            //     "data" => $users
-            // ];
-            // return response()->json($data, 200);
             return response()->json($users, 200);
         }
 

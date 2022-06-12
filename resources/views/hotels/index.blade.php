@@ -19,7 +19,7 @@
         {{env('APP_NAME')}}
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" id="hotelsTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
                             <th>Id</th>
@@ -30,13 +30,6 @@
                             <th>Id</th>
                         </tr>
                     </tfoot>
-                    <tbody>
-                        @foreach($hotels as $hotel)
-                        <tr>
-                            <td>{{$hotel->id}}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
                 </table>
             </div>
         </div>
@@ -123,6 +116,41 @@
 
 <script>
     $(document).ready(function() {
+
+        fetchTableData();
+
+        function fetchTableData(){
+            $.ajax({
+                url: "<?php echo asset('') ?>"+"hotels?json=1",
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                type: 'GET',
+                dataType: "json",
+                success: function(response) {
+                    
+                    $('#hotelsTable').DataTable({
+                        data: response,
+                        columns: [
+                            { 'data': 'id' },
+                        ]
+                    });
+                },
+                error: function(errors){
+                    setTimeout(function() {
+                        toastr['error'](
+                            errors.responseJSON.message, {
+                                closeButton: true,
+                                tapToDismiss: false
+                            }
+                        );
+                    }, 1000);
+
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+        }
+
         var $form = $("#createForm");
         $form.validate({
             rules: {
@@ -208,6 +236,9 @@
                         $("#createSubmit").attr('disabled', false);
 
                         $('#CreateFormModal').modal('hide')
+
+                        $('#hotelsTable').DataTable().destroy();
+                        fetchTableData();
 
                         setTimeout(function() {
                             toastr['success'](

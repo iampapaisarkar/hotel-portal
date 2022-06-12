@@ -29,7 +29,7 @@ class HotelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $hotels = Records::select('records.*')
         ->latest();
@@ -38,6 +38,10 @@ class HotelController extends Controller
             $hotels = $hotels->get();
         }else{
             $hotels = $hotels->where('user_id', Auth::user()->id)->get();
+        }
+
+        if($request->json == '1'){
+            return response()->json($hotels, 200);
         }
 
         return view('hotels.index', compact('hotels'));
