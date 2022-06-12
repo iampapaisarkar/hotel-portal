@@ -10,13 +10,13 @@ class Info
 
     public static function states()
     {
-        $states = State::get();
+        $states = State::with('lgas')->get();
         return $states;
     }
 
     public static function lgas()
     {
-        $lgas = Lga::get();
+        $lgas = Lga::with('state')->get();
         return $lgas;
     }
 }

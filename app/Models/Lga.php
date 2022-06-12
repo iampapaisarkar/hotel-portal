@@ -12,4 +12,8 @@ class Lga extends Model
     protected $fillable = [
         'state_id', 'name'
     ];
+
+    public function state() {
+        return $this->hasOne(State::class,'id', 'state_id');
+    }
 }

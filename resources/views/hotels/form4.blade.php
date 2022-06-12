@@ -87,7 +87,7 @@
         $lgas = app('App\Http\Service\Info')->lgas();
         @endphp
          <label for="lga">L.G.A:</label>
-         <select name="h_lga" id="inputState" class="form-control  @error('h_lga') is-invalid @enderror">
+         <select name="h_lga" id="inputLga" disabled class="form-control  @error('h_lga') is-invalid @enderror">
             <option selected value="" hidden>Select LGA</option>
             @foreach($lgas as $lga)
             <option>{{$lga->name}}</option>
@@ -111,3 +111,24 @@
          @enderror
      </div>
  </div>
+
+
+ <script>
+    $('#inputh_State').on('change', function() {
+        var value = this.value;
+        if (value && value.length != null) {
+            $('#inputLga').removeAttr('disabled');
+            var lgas = <?php if(isset($lgas)){echo $lgas;} ?>;
+            var optionsHTML = '<option selected value="">Select LGA</option>';
+            lgas.forEach(lga => {
+                if (lga.state.name == value) {
+                    optionsHTML += '<option value="' + lga.id + '">' + lga.name + '</option>'
+                }
+            });
+            $('#inputLga').html(optionsHTML);
+        } else {
+            $('#inputLga').html('<option selected value="">Select LGA</option>');
+            $('#inputLga').attr('disabled');
+        }
+    });
+ </script>
