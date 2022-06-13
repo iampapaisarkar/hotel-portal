@@ -156,7 +156,7 @@ class RestaurantController extends Controller
             RestaurantAmenities::create([
                 "record_id" => $record->id,
                 "ra_amenities" => $request->ra_amenities,
-                "ra_type" => $request->ra_type,
+                // "ra_type" => $request->ra_type,
             ]);
 
             $rm_images = FileUpload::upload($request->file('rm_images'), $private = false);

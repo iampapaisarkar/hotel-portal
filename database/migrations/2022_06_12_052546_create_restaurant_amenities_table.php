@@ -17,7 +17,7 @@ class CreateRestaurantAmenitiesTable extends Migration
             $table->id();
             $table->string('record_id');
             $table->string('ra_amenities');
-            $table->string('ra_type');
+            $table->string('ra_type')->nullable();
             $table->timestamps();
         });
     }

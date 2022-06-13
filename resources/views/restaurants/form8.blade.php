@@ -2,7 +2,6 @@
     <div class="col-12 col-md-6">
          <label for="ra_amenities">Amenities:</label>
          <select id="ra_amenities" name="ra_amenities" class="form-control w-100  @error('ra_amenities') is-invalid @enderror">
-            <option selected value="">Select Amenities</option>
             <option>Opening times</option>
             <option>Parking</option>
             <option>Indoor dining</option>
@@ -16,7 +15,7 @@
          </span>
          @enderror
      </div>
-     <div class="col-12 col-md-6">
+     <!-- <div class="col-12 col-md-6">
          <label for="ra_type">Type of Restaurant:</label>
          <select name="ra_type" id="ra_type" class="form-control  @error('ra_type') is-invalid @enderror">
             <option selected value="">Select Type</option>
@@ -33,10 +32,18 @@
              <strong>{{ $message }}</strong>
          </span>
          @enderror
-     </div>
+     </div> -->
  </div>
 
  <script>
+    $(document).ready(function() {
+        var $disabledResults = $("#ra_amenities");
+        $disabledResults.select2({
+            multiple: true,
+            selectOnClose: false,
+            placeholder: "Select Amenities",
+        });
+    });
  </script>
 
  <style>

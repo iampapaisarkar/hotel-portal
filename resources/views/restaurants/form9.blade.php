@@ -2,7 +2,6 @@
     <div class="col-12 col-md-6">
          <label for="rm_restaurant_type">Type of Restaurant:</label>
          <select name="rm_restaurant_type" id="rm_restaurant_type" class="form-control  @error('rm_restaurant_type') is-invalid @enderror">
-            <option selected value="">Select Type</option>
             <option>Fine Dining</option>
             <option>Casual Dinner</option>
             <option>Lounges</option>
@@ -21,7 +20,6 @@
     <div class="col-12 col-md-6">
          <label for="rm_meals">Meals:</label>
          <select name="rm_meals" id="rm_meals" class="form-control  @error('rm_meals') is-invalid @enderror">
-            <option selected value="">Select Melas</option>
             <option>African</option>
             <option>Spanish</option>
             <option>Intercontinental</option>
@@ -60,3 +58,21 @@
          @enderror
      </div>
  </div>
+
+ <script>
+        $(document).ready(function() {
+            var $disabledResults = $("#rm_restaurant_type");
+            $disabledResults.select2({
+                multiple: true,
+                selectOnClose: false,
+                placeholder: "Select Type",
+            });
+
+            var $disabledResults = $("#rm_meals");
+            $disabledResults.select2({
+                multiple: true,
+                selectOnClose: false,
+                placeholder: "Select Meals",
+            });
+        });
+ </script>
