@@ -33,6 +33,7 @@ class HotelController extends Controller
     {
         $hotels = Records::select('records.*')
         ->with(
+            'agent',
             'uder_details',
             'contact_details',
             'other_details',

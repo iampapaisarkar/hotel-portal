@@ -33,6 +33,7 @@ class RestaurantController extends Controller
     {
         $restaurants = Records::select('records.*')
         ->with(
+            'agent',
             'uder_details',
             'contact_details',
             'other_details',
