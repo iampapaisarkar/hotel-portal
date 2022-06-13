@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-12 col-md-6">
-         <label for="rcat_type">Type of Hotel:</label>
+         <label for="rcat_type">Type of Restaurant:</label>
          <select name="rcat_type" id="inputState" class="form-control  @error('rcat_type') is-invalid @enderror">
             <option selected value="">Select Type</option>
             <option>Fine Dining</option>
