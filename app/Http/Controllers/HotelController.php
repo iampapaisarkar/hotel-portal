@@ -32,6 +32,19 @@ class HotelController extends Controller
     public function index(Request $request)
     {
         $hotels = Records::select('records.*')
+        ->with(
+            'uder_details',
+            'contact_details',
+            'other_details',
+            'hotel',
+            'hotel_contact',
+            'parent_company',
+            'hotel_category',
+            'hotel_amenities',
+            'room_type',
+            'hotel_price',
+            'booking_day'
+        )
         ->where('type', 'hotel')
         ->latest();
 

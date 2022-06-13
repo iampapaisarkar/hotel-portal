@@ -32,6 +32,18 @@ class RestaurantController extends Controller
     public function index(Request $request)
     {
         $restaurants = Records::select('records.*')
+        ->with(
+            'uder_details',
+            'contact_details',
+            'other_details',
+            'restaurant',
+            'restaurant_contact',
+            'parent_company',
+            'restaurant_category',
+            'restaurant_amenities',
+            'restaurant_meals',
+            'restaurant_cancalletion'
+        )
         ->where('type', 'restaurant')
         ->latest();
 

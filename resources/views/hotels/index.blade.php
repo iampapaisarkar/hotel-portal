@@ -22,12 +22,20 @@
                 <table class="table table-bordered" id="hotelsTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Id</th>
+                            <th>Hotel Name</th>
+                            <th>Hotel Type</th>
+                            <th>State</th>
+                            <th>Agent</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Id</th>
+                            <th>Hotel Name</th>
+                            <th>Hotel Type</th>
+                            <th>State</th>
+                            <th>Agent</th>
+                            <th>Action</th>
                         </tr>
                     </tfoot>
                 </table>
@@ -130,7 +138,31 @@
                     $('#hotelsTable').DataTable({
                         data: response,
                         columns: [
-                            { 'data': 'id' },
+                            {
+                                render: function (data, type, full, meta) {
+                                return full.hotel.h_name;
+                                },
+                            },
+                            {
+                                render: function (data, type, full, meta) {
+                                return full.hotel_category.hcat_type_of_hotel;
+                                },
+                            },
+                            {
+                                render: function (data, type, full, meta) {
+                                return full.hotel.h_state;
+                                },
+                            },
+                            {
+                                render: function (data, type, full, meta) {
+                                return full.agent.name;
+                                },
+                            },
+                            {
+                                render: function (data, type, full, meta) {
+                                return '<a href="#" class="btn btn-info btn-sm" type="button">View</a>';
+                                },
+                            }
                         ]
                     });
                 },
