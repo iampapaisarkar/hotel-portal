@@ -166,7 +166,7 @@ class RestaurantController extends Controller
                 "rm_images" => $rm_images,
                 "rm_meals" => $request->rm_meals,
                 "rm_price" => $request->rm_price,
-                "rm_restaurant_type" => $request->rm_restaurant_type,
+                // "rm_restaurant_type" => $request->rm_restaurant_type,
             ]);
 
             RestaurantCancellation::create([

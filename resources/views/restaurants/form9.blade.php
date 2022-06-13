@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-12 col-md-6">
+    <!-- <div class="col-12 col-md-6">
          <label for="rm_restaurant_type">Type of Restaurant:</label>
          <select name="rm_restaurant_type" id="rm_restaurant_type" class="form-control  @error('rm_restaurant_type') is-invalid @enderror">
             <option>Fine Dining</option>
@@ -15,7 +15,7 @@
              <strong>{{ $message }}</strong>
          </span>
          @enderror
-    </div>
+    </div> -->
 
     <div class="col-12 col-md-6">
          <label for="rm_meals">Meals:</label>
