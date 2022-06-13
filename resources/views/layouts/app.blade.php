@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{{ env('APP_NAME') }}</title>
+    <title>AURA by Transcorp</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('libs/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">

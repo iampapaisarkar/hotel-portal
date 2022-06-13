@@ -20,7 +20,7 @@ class CreateOtherDetailsTable extends Migration
             $table->string('od_name_of_bank');
             $table->string('od_id_type');
             $table->string('od_id_document');
-            $table->integer('od_id_number');
+            $table->string('od_id_number');
             $table->timestamps();
         });
     }
