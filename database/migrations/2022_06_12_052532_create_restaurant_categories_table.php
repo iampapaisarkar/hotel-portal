@@ -17,6 +17,8 @@ class CreateRestaurantCategoriesTable extends Migration
             $table->id();
             $table->integer('record_id');
             $table->string('rcat_type');
+            $table->string('rcat_meals');
+            $table->string('rcat_amenities');
             $table->timestamps();
         });
     }

@@ -17,24 +17,6 @@
          @enderror
     </div> -->
 
-    <div class="col-12 col-md-6">
-         <label for="rm_meals">Meals:</label>
-         <select name="rm_meals" id="rm_meals" class="form-control  @error('rm_meals') is-invalid @enderror">
-            <option>African</option>
-            <option>Spanish</option>
-            <option>Intercontinental</option>
-            <option>Italian</option>
-            <option>Mexican</option>
-            <option>Lebanese</option>
-            <option>Others</option>
-        </select>
-        @error('rm_meals')
-         <span class="invalid-feedback" role="alert">
-             <strong>{{ $message }}</strong>
-         </span>
-         @enderror
-    </div>
-
     <div class="col-12 col-md-6 mb-3">
          <label for="rm_price">Prices:</label>
          <input type="number" name="rm_price" value="{{ old('rm_price') }}"

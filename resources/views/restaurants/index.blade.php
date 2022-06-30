@@ -67,7 +67,6 @@
                             <a style="font-size: 11px;" class="nav-link" id="tab5-tab" data-toggle="pill" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">{{ ucwords(strtolower('RESTAURANTS CONTACT DETAILS')) }}</a>
                             <a style="font-size: 11px;" class="nav-link" id="tab6-tab" data-toggle="pill" href="#tab6" role="tab" aria-controls="tab6" aria-selected="false">{{ ucwords(strtolower('PARENT COMPANY')) }}</a>
                             <a style="font-size: 11px;" class="nav-link" id="tab7-tab" data-toggle="pill" href="#tab7" role="tab" aria-controls="tab7" aria-selected="false">{{ ucwords(strtolower('RESTAURANT CATEGORIZATION')) }}</a>
-                            <a style="font-size: 11px;" class="nav-link" id="tab8-tab" data-toggle="pill" href="#tab8" role="tab" aria-controls="tab8" aria-selected="false">{{ ucwords(strtolower('RESTAURANT AMENITIES')) }}</a>
                             <a style="font-size: 11px;" class="nav-link" id="tab9-tab" data-toggle="pill" href="#tab9" role="tab" aria-controls="tab9" aria-selected="false">{{ ucwords(strtolower('RESTAURANT MEALS')) }}</a>
                             <a style="font-size: 11px;" class="nav-link" id="tab10-tab" data-toggle="pill" href="#tab10" role="tab" aria-controls="tab10" aria-selected="false">{{ ucwords(strtolower('CANCELLATION DETAILS')) }}</a>
                             </div>
@@ -94,9 +93,6 @@
                                 </div>
                                 <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="tab7-tab">
                                     @include('restaurants.form7')
-                                </div>
-                                <div class="tab-pane fade" id="tab8" role="tabpanel" aria-labelledby="tab8-tab">
-                                    @include('restaurants.form8')
                                 </div>
                                 <div class="tab-pane fade" id="tab9" role="tabpanel" aria-labelledby="tab9-tab">
                                     @include('restaurants.form9')
@@ -222,12 +218,9 @@
                 pc_rc_number: "required",
 
                 rcat_type: "required",
+                rcat_meals: "required",
+                rcat_amenities: "required",
 
-                ra_amenities: "required",
-                ra_type: "required",
-
-                rm_restaurant_type: "required",
-                rm_meals: "required",
                 rm_price: "required",
                 rm_images: "required",
 

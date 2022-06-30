@@ -12,5 +12,7 @@ class RestaurantCategory extends Model
     protected $fillable = [
         'record_id',
         'rcat_type',
+        'rcat_meals',
+        'rcat_amenities',
     ];
 }
