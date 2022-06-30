@@ -1,34 +1,4 @@
 <div class="row">
-    <div class="col-12 col-md-6">
-         <label for="room_type">Room Type:</label>
-         <select name="rt_room_type" id="rt_room_type" class="form-control  @error('rt_room_type') is-invalid @enderror">
-            <option>Standard Single</option>
-            <option>Standard Double</option>
-            <option>Hotel-Apartments</option>
-            <option>King or Queen Room</option>
-            <option>Executive Suite</option>
-            <option>Family Suite</option>
-            <option>Penthouse</option>
-            <option>Presidential Suite</option>
-            <option>Twin-Room</option>
-        </select>
-        @error('rt_room_type')
-         <span class="invalid-feedback" role="alert">
-             <strong>{{ $message }}</strong>
-         </span>
-         @enderror
-     </div>
-    <div class="col-12 col-md-6 mb-3">
-         <label for="front_view">Front View of Hotel:</label>
-         <input type="file" name="rt_front_view" value="{{ old('rt_front_view') }}"
-             class="form-control form-control @error('rt_front_view') is-invalid @enderror" id="rt_front_view"
-             aria-describedby="rt_front_view" placeholder="Enter phone number">
-         @error('rt_front_view')
-         <span class="invalid-feedback" role="alert">
-             <strong>{{ $message }}</strong>
-         </span>
-         @enderror
-     </div>
      <div class="col-12 col-md-6 mb-3">
          <label for="bathroom_view">Bathroom Pictures:</label>
          <input type="file" name="rt_bathroom_view" value="{{ old('rt_bathroom_view') }}"
@@ -52,15 +22,3 @@
          @enderror
      </div>
  </div>
-
-
- <script>
-        $(document).ready(function() {
-            var $disabledResults = $("#rt_room_type");
-            $disabledResults.select2({
-                multiple: true,
-                selectOnClose: false,
-                placeholder: "Select Room Type",
-            });
-        });
- </script>

@@ -17,7 +17,6 @@ class CreateRoomTypesTable extends Migration
             $table->id();
             $table->integer('record_id');
             $table->string('rt_room_type');
-            $table->string('rt_front_view');
             $table->string('rt_bathroom_view');
             $table->string('rt_room_picture');
             $table->timestamps();

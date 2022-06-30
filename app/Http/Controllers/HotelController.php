@@ -11,7 +11,7 @@ use App\Models\Hotel;
 use App\Models\HotelContact;
 use App\Models\ParentCompany;
 use App\Models\HotelCategory;
-use App\Models\HotelAmenities;
+use App\Models\RoomSetup;
 use App\Models\RoomType;
 use App\Models\HotelPrice;
 use App\Models\BookingDay;
@@ -41,7 +41,6 @@ class HotelController extends Controller
             'hotel_contact',
             'parent_company',
             'hotel_category',
-            'hotel_amenities',
             'room_type',
             'hotel_price',
             'booking_day'
@@ -149,43 +148,56 @@ class HotelController extends Controller
                 "pc_rc_number" => $request->pc_rc_number,
             ]);
 
+            $hcat_front_view = FileUpload::upload($request->file('hcat_front_view'), $private = false);
             HotelCategory::create([
                 "record_id" => $record->id,
-                "hcat_bathroom_no" => $request->hcat_bathroom_no,
-                "hcat_bed_no" => $request->hcat_bed_no,
-                "hcat_days_of_notice" => $request->hcat_days_of_notice,
-                "hcat_guest_no" => $request->hcat_guest_no,
-                "hcat_room_no" => $request->hcat_room_no,
-                "hcat_room_type" => $request->hcat_room_type,
                 "hcat_type_of_hotel" => $request->hcat_type_of_hotel,
+                "hcat_days_of_notice" => $request->hcat_days_of_notice,
+                "hcat_room_type" => json_encode($request->hcat_room_type),
+                "hcat_amenities" => $request->hcat_amenities,
+                "hcat_front_view" => $hcat_front_view,
             ]);
 
-            HotelAmenities::create([
-                "record_id" => $record->id,
-                "ha_amenities" => $request->ha_amenities,
-                "ha_room_type" => $request->ha_room_type,
-                "ha_room_type_amenities" => $request->ha_room_type_amenities,
-            ]);
 
-            $rt_bathroom_view = FileUpload::upload($request->file('rt_bathroom_view'), $private = false);
-            $rt_front_view = FileUpload::upload($request->file('rt_front_view'), $private = false);
-            $rt_room_picture = FileUpload::upload($request->file('rt_room_picture'), $private = false);
+            if($request->room_setup){
+                foreach ($request->room_setup as $key => $room) {
+                    RoomSetup::create([
+                        "record_id" => $record->id,
+                        "ha_room_type" => $room['ha_room_type'],
+                        "ha_room_type_amenities" => $room['ha_room_type_amenities'],
+                        "ha_room_type_no" => $room['ha_room_type_no'],
+                        "ha_bed_no" => $room['ha_bed_no'],
+                        "ha_guest_no" => $room['ha_guest_no'],
+                        "ha_bathroom_no" => $room['ha_bathroom_no'],
+                    ]);
+                }
+            }
+            
+            if($request->room_type){
+                foreach ($request->room_type as $key => $type) {
+                    $rt_bathroom_view = FileUpload::upload($type['rt_bathroom_view'], $private = false);
+                    $rt_room_picture = FileUpload::upload($type['rt_room_picture'], $private = false);
 
-            RoomType::create([
-                "record_id" => $record->id,
-                "rt_bathroom_view" => $rt_bathroom_view,
-                "rt_front_view" => $rt_front_view,
-                "rt_room_picture" => $rt_room_picture,
-                "rt_room_type" => $request->rt_room_type,
-            ]);
+                    RoomType::create([
+                        "record_id" => $record->id,
+                        "rt_room_type" => $type['rt_room_type'],
+                        "rt_bathroom_view" => $rt_bathroom_view,
+                        "rt_room_picture" => $rt_room_picture,
+                    ]);
+                }
+            }
 
-            HotelPrice::create([
-                "record_id" => $record->id,
-                "hp_corporate_price" => $request->hp_corporate_price,
-                "hp_discount_rate" => $request->hp_discount_rate,
-                "hp_corporate_price" => $request->hp_corporate_price,
-                "hp_room_type" => $request->hp_room_type
-            ]);
+            if($request->hotel_price){
+                foreach ($request->hotel_price as $key => $price) {
+                    HotelPrice::create([
+                        "record_id" => $record->id,
+                        "hp_room_type" => $price['hp_room_type'],
+                        "hp_base_price" => $price['hp_base_price'],
+                        "hp_discount_rate" => $price['hp_discount_rate'],
+                        "hp_discount_price" => intval(intval($price['hp_base_price']) - (intval($price['hp_base_price']) * intval($price['hp_discount_price']) / 100))
+                    ]);
+                }
+            }
 
             BookingDay::create([
                 "record_id" => $record->id,

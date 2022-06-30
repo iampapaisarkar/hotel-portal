@@ -14,9 +14,7 @@ class HotelCategory extends Model
         'hcat_type_of_hotel',
         'hcat_days_of_notice',
         'hcat_room_type',
-        'hcat_bed_no',
-        'hcat_guest_no',
-        'hcat_bathroom_no',
-        'hcat_room_no',
+        'hcat_amenities',
+        'hcat_front_view',
     ];
 }

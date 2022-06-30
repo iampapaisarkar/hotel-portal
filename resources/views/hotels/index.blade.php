@@ -67,9 +67,9 @@
                             <a style="font-size: 11px;" class="nav-link" id="tab5-tab" data-toggle="pill" href="#tab5" role="tab" aria-controls="tab5" aria-selected="false">{{ ucwords(strtolower('HOTELS CONTACT DETAILS')) }}</a>
                             <a style="font-size: 11px;" class="nav-link" id="tab6-tab" data-toggle="pill" href="#tab6" role="tab" aria-controls="tab6" aria-selected="false">{{ ucwords(strtolower('PARENT COMPANY')) }}</a>
                             <a style="font-size: 11px;" class="nav-link" id="tab7-tab" data-toggle="pill" href="#tab7" role="tab" aria-controls="tab7" aria-selected="false">{{ ucwords(strtolower('HOTEL CATEGORIZATION')) }}</a>
-                            <a style="font-size: 11px;" class="nav-link" id="tab8-tab" data-toggle="pill" href="#tab8" role="tab" aria-controls="tab8" aria-selected="false">{{ ucwords(strtolower('HOTEL AMENITIES')) }}</a>
-                            <a style="font-size: 11px;" class="nav-link" id="tab9-tab" data-toggle="pill" href="#tab9" role="tab" aria-controls="tab9" aria-selected="false">{{ ucwords(strtolower('ROOM TYPE PICTURES')) }}</a>
-                            <a style="font-size: 11px;" class="nav-link" id="tab10-tab" data-toggle="pill" href="#tab10" role="tab" aria-controls="tab10" aria-selected="false">{{ ucwords(strtolower('HOTEL PRICE PER ROOM TYPE')) }}</a>
+                            <!-- <a style="font-size: 11px;" class="nav-link" id="tab8-tab" data-toggle="pill" href="#tab8" role="tab" aria-controls="tab8" aria-selected="false">{{ ucwords(strtolower('ROOM SETUP')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab9-tab" data-toggle="pill" href="#tab9" role="tab" aria-controls="tab9" aria-selected="false">{{ ucwords(strtolower('ROOM TYPE PICTURE')) }}</a>
+                            <a style="font-size: 11px;" class="nav-link" id="tab10-tab" data-toggle="pill" href="#tab10" role="tab" aria-controls="tab10" aria-selected="false">{{ ucwords(strtolower('HOTEL PRICE PER ROOM')) }}</a> -->
                             <a style="font-size: 11px;" class="nav-link" id="tab11-tab" data-toggle="pill" href="#tab11" role="tab" aria-controls="tab11" aria-selected="false">{{ ucwords(strtolower('BOOKING DAYS')) }}</a>
                             </div>
                         </div>
@@ -95,15 +95,6 @@
                                 </div>
                                 <div class="tab-pane fade" id="tab7" role="tabpanel" aria-labelledby="tab7-tab">
                                     @include('hotels.form7')
-                                </div>
-                                <div class="tab-pane fade" id="tab8" role="tabpanel" aria-labelledby="tab8-tab">
-                                    @include('hotels.form8')
-                                </div>
-                                <div class="tab-pane fade" id="tab9" role="tabpanel" aria-labelledby="tab9-tab">
-                                    @include('hotels.form9')
-                                </div>
-                                <div class="tab-pane fade" id="tab10" role="tabpanel" aria-labelledby="tab10-tab">
-                                    @include('hotels.form10')
                                 </div>
                                 <div class="tab-pane fade" id="tab11" role="tabpanel" aria-labelledby="tab411tab">
                                     @include('hotels.form11')
@@ -228,23 +219,25 @@
                 hcat_type_of_hotel: "required",
                 hcat_days_of_notice: "required",
                 hcat_room_type: "required",
-                hcat_bed_no: "required",
-                hcat_guest_no: "required",
-                hcat_bathroom_no: "required",
-                hcat_room_no: "required",
+                hcat_amenities: "required",
+                hcat_front_view: "required",
 
-                ha_amenities: "required",
-                ha_room_type: "required",
-                ha_room_type_amenities: "required",
+                'room_setup[]': "required",
+                'room_type[]': "required",
+                'hotel_price[]': "required",
 
-                rt_room_type: "required",
-                rt_front_view: "required",
-                rt_bathroom_view: "required",
-                rt_room_picture: "required",
+                // ha_room_type_amenities: "required",
+                // ha_room_type_no: "required",
+                // ha_bed_no: "required",
+                // ha_guest_no: "required",
+                // ha_bathroom_no: "required",
 
-                hp_room_type: "required",
-                hp_corporate_price: "required",
-                hp_discount_rate: "required",
+                // rt_bathroom_view: "required",
+                // rt_room_picture: "required",
+
+                // hp_base_price: "required",
+                // hp_discount_rate: "required",
+                // discount_rate: "required",
 
                 bday_min_booking_day: "required",
                 bday_max_booking_day: "required",

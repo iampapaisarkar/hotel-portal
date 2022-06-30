@@ -19,10 +19,8 @@ class CreateHotelCategoriesTable extends Migration
             $table->string('hcat_type_of_hotel');
             $table->string('hcat_days_of_notice');
             $table->string('hcat_room_type');
-            $table->integer('hcat_bed_no');
-            $table->integer('hcat_guest_no');
-            $table->integer('hcat_bathroom_no');
-            $table->integer('hcat_room_no');
+            $table->string('hcat_amenities');
+            $table->string('hcat_front_view');
             $table->timestamps();
         });
     }

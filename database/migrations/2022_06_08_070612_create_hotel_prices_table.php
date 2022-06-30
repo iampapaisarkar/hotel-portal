@@ -17,8 +17,9 @@ class CreateHotelPricesTable extends Migration
             $table->id();
             $table->integer('record_id');
             $table->string('hp_room_type');
-            $table->float('hp_corporate_price');
-            $table->integer('hp_discount_rate');
+            $table->float('hp_base_price');
+            $table->float('hp_discount_rate');
+            $table->integer('hp_discount_price');
             $table->timestamps();
         });
     }

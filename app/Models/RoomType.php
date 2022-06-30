@@ -12,7 +12,6 @@ class RoomType extends Model
     protected $fillable = [
         'record_id',
         'rt_room_type',
-        'rt_front_view',
         'rt_bathroom_view',
         'rt_room_picture',
     ];
