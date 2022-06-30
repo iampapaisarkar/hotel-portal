@@ -155,19 +155,19 @@ class RestaurantController extends Controller
                 "rcat_amenities" => $request->rcat_amenities,
             ]);
 
-            // RestaurantAmenities::create([
-            //     "record_id" => $record->id,
-            //     "ra_amenities" => $request->ra_amenities,
-            //     // "ra_type" => $request->ra_type,
-            // ]);
+            if($request->meals){
+                foreach ($request->meals as $key => $meal) {
+                    $rm_images = FileUpload::upload($meal['photo'], $private = false);
+                    RestaurantMeals::create([
+                        "record_id" => $record->id,
+                        "rm_name" => $meal['name'],
+                        "rm_images" => $rm_images,
+                        "rm_price" => $request['price'],
+                    ]);
+                }
+            }
 
-            $rm_images = FileUpload::upload($request->file('rm_images'), $private = false);
-
-            RestaurantMeals::create([
-                "record_id" => $record->id,
-                "rm_images" => $rm_images,
-                "rm_price" => $request->rm_price,
-            ]);
+            
 
             RestaurantCancellation::create([
                 "record_id" => $record->id,

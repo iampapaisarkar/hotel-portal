@@ -16,6 +16,7 @@ class CreateRestaurantMealsTable extends Migration
         Schema::create('restaurant_meals', function (Blueprint $table) {
             $table->id();
             $table->string('record_id');
+            $table->float('rm_name');
             $table->float('rm_price');
             $table->string('rm_images');
             $table->timestamps();

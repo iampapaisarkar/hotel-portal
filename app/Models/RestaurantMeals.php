@@ -12,6 +12,7 @@ class RestaurantMeals extends Model
     protected $fillable = [
         'record_id',
         'rm_restaurant_type',
+        'rm_name',
         'rm_price',
         'rm_images',
     ];
